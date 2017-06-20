@@ -1,0 +1,61 @@
+<html><head><script type="text/javascript"> var descendant = {
+ 
+  name: "Peter",
+  
+  descendant : {
+   
+    name: "Marie",
+  	
+    descendant : {
+   
+      name: "John",
+      
+      descendant : {
+   
+        name: "Brian"
+    
+      }
+    
+    }
+  
+  }
+
+};
+
+
+function addLastName (theDescendant, lastName) {
+   
+  theDescendant.name += ' ' + lastName;
+  
+  if (theDescendant.descendant) {
+    
+    addLastName(theDescendant.descendant, lastName);
+  
+  }
+  
+}
+
+console.log(descendant);
+
+addLastName(descendant, "Dorval" + 2);
+
+console.log(descendant);
+
+
+
+function exponential (number, by) {
+  
+  number *= number;
+  
+  if (--by > 0) {
+    
+    number = exponential(number, by);
+  
+  }
+  
+  return number;
+
+} 
+
+
+console.log(exponential(2, 5));</script></head><body scroll="auto"></body></html>
